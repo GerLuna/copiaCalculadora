@@ -1,10 +1,10 @@
-"""
+'"""
 Router de operaciones matemáticas para la API de calculadora.
 """
 
 from fastapi import APIRouter
 from models.request_models import SumaRequest
-from services.operaciones_service import sumar
+from services.operaciones_service import sumar, multiplicar
 
 router = APIRouter()
 
@@ -22,4 +22,13 @@ def ruta_suma(datos: SumaRequest):
 
     resultado = sumar(datos.a, datos.b)
     return {"resultado": resultado}
+
+@router.post("/multiplicar")
+def ruta_multiplica(datos: MultiplicacionRequest):
+	"""
+	Calcula la muiltiplicacion de dos numeros.
+	"""
+	
+	resultado = multiplicar(datos.a, datos.b)
+	return {"resultado": resultado}
 
