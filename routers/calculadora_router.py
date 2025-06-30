@@ -1,4 +1,4 @@
-'"""
+"""
 Router de operaciones matemáticas para la API de calculadora.
 """
 
@@ -23,7 +23,7 @@ def ruta_suma(datos: SumaRequest):
     resultado = sumar(datos.a, datos.b)
     return {"resultado": resultado}
 
-@router.post("/multiplicar")
+@router.post("/multiplica")
 def ruta_multiplica(datos: MultiplicacionRequest):
 	"""
 	Calcula la muiltiplicacion de dos numeros.
